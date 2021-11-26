@@ -1,7 +1,8 @@
 <template>
   <div>
     Login
-    <span>{{ $store.state.name }}</span>
+    <el-button>按钮</el-button>
+    <el-button type="danger" size="default">Hello</el-button>
   </div>
 </template>
 
