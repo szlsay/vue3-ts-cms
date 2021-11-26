@@ -1,5 +1,8 @@
 <template>
-  <div>Login</div>
+  <div>
+    Login
+    <span>{{ $store.state.name }}</span>
+  </div>
 </template>
 
 <script lang="ts">
