@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 
-createApp(App).mount('#app')
-
-console.log('test commit')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
