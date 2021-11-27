@@ -2,7 +2,7 @@
   <div>
     Login
     <el-button>按钮</el-button>
-    <el-button type="danger" size="default">Hello</el-button>
+    <el-button type="danger">Hello</el-button>
   </div>
 </template>
 

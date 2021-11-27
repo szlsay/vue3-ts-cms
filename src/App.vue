@@ -5,7 +5,7 @@
     <router-view></router-view>
     <span>{{ $store.state.name }}</span>
     <el-button>按钮</el-button>
-    <el-button type="success" size="default">Hello</el-button>
+    <el-button type="success">Hello</el-button>
   </div>
 </template>
 
