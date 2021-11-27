@@ -9,3 +9,8 @@ app.use(router)
 app.use(store)
 app.use(globalRegister)
 app.mount('#app')
+
+// console.log(VUE_APP_BASE_URL)
+// console.log(VUE_APP_BASE_NAME)
+console.log(process.env.VUE_APP_BASE_URL)
+console.log(process.env.VUE_APP_BASE_NAME)
