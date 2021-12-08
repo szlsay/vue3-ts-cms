@@ -2,15 +2,15 @@ import axios from 'axios'
 
 // axios的实例对象
 // 1.模拟get请求
-// axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
-//   console.log(res.data)
-// })
+axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
+  console.log(res.data)
+})
 
 // 2.get请求,并且传入参数
 // axios
 //   .get('http://httpbin.org/get', {
 //     params: {
-//       name: 'st',
+//       name: 'coderwhy',
 //       age: 18
 //     }
 //   })
@@ -48,7 +48,7 @@ axios.defaults.timeout = 10000
 // axios
 //   .get('/get', {
 //     params: {
-//       name: 'st',
+//       name: 'coderwhy',
 //       age: 18
 //     },
 //     timeout: 5000,
@@ -69,6 +69,17 @@ axios.defaults.timeout = 10000
 //   .then((res) => {
 //     console.log(res.data)
 //   })
+
+// 5.axios.all -> 多个请求, 一起返回
+axios
+  .all([
+    axios.get('/get', { params: { name: 'why', age: 18 } }),
+    axios.post('/post', { data: { name: 'why', age: 18 } })
+  ])
+  .then((res) => {
+    console.log(res[0].data)
+    console.log(res[1].data)
+  })
 
 // 6.axios的拦截器
 // fn1: 请求发送成功会执行的函数
@@ -98,14 +109,3 @@ axios.interceptors.response.use(
     return err
   }
 )
-
-// 5.axios.all -> 多个请求, 一起返回
-axios
-  .all([
-    axios.get('/get', { params: { name: 'why', age: 18 } }),
-    axios.post('/post', { data: { name: 'why', age: 18 } })
-  ])
-  .then((res) => {
-    console.log(res[0].data)
-    console.log(res[1].data)
-  })
