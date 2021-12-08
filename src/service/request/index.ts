@@ -3,7 +3,6 @@ import type { AxiosInstance } from 'axios'
 import type { HYRequestInterceptors, HYRequestConfig } from './type'
 
 import { ElLoading } from 'element-plus/lib/components'
-// import { ILoadingInstance } from 'element-plus/lib/el-loading/src/loading.type'
 import { ILoadingInstance } from 'element-plus/lib/components/loading/src/loading.type'
 const DEAFULT_LOADING = true
 

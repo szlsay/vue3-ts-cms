@@ -5,9 +5,29 @@ import { App } from 'vue'
 // 导入index.css
 import 'element-plus/dist/index.css'
 // 局部导入的路径
-import { ElButton, ElInput } from 'element-plus/lib/components'
+import {
+  ElButton,
+  ElCheckbox,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElLink,
+  ElRadio,
+  ElTabPane,
+  ElTabs
+} from 'element-plus/lib/components'
 
-const components = [ElButton, ElInput]
+const components = [
+  ElButton,
+  ElCheckbox,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElLink,
+  ElRadio,
+  ElTabPane,
+  ElTabs
+]
 
 export default function (app: App): void {
   for (const component of components) {
