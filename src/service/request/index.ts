@@ -2,16 +2,16 @@ import axios from 'axios'
 import type { AxiosInstance } from 'axios'
 import type { HYRequestInterceptors, HYRequestConfig } from './type'
 
-import { ElLoading } from 'element-plus'
+import { ElLoading } from 'element-plus/lib/components'
 // import { ILoadingInstance } from 'element-plus/lib/el-loading/src/loading.type'
-// import { ILoadingInstance } from 'element-plus/lib/components/loading/src/loading.type'
+import { ILoadingInstance } from 'element-plus/lib/components/loading/src/loading.type'
 const DEAFULT_LOADING = true
 
 class HYRequest {
   instance: AxiosInstance
   interceptors?: HYRequestInterceptors
   showLoading: boolean
-  // loading?: ILoadinzInstance
+  loading?: ILoadingInstance
 
   constructor(config: HYRequestConfig) {
     // 创建axios实例
@@ -38,11 +38,11 @@ class HYRequest {
         console.log('所有的实例都有的拦截器: 请求成功拦截')
 
         if (this.showLoading) {
-          // this.loading = ElLoading.service({
-          //   lock: true,
-          //   text: '正在请求数据....',
-          //   background: 'rgba(0, 0, 0, 0.5)'
-          // })
+          this.loading = ElLoading.service({
+            lock: true,
+            text: '正在请求数据....',
+            background: 'rgba(0, 0, 0, 0.5)'
+          })
         }
         return config
       },
