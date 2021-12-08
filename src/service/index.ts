@@ -3,6 +3,7 @@ import HYRequest from './request'
 import { BASE_URL, TIME_OUT } from './request/config'
 
 import localCache from '@/utils/cache'
+import { AxiosRequestHeaders } from 'axios'
 
 const hyRequest = new HYRequest({
   baseURL: BASE_URL,
@@ -12,7 +13,10 @@ const hyRequest = new HYRequest({
       // 携带token的拦截
       const token = localCache.getCache('token')
       if (token) {
-        // config.headers.Authorization = `Bearer ${token}`
+        const headers: AxiosRequestHeaders | undefined = config.headers
+        if (headers !== undefined) {
+          headers.Authorization = `Bearer ${token}`
+        }
       }
       return config
     },
